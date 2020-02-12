@@ -1,0 +1,11 @@
+version: "3"
+
+services: 
+    app:
+        build: .
+        image: agendabasura
+        container_name: agendabasura
+        ports: 
+            - "7654:5000"
+        volumes: 
+            - ./src:/app
