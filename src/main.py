@@ -6,6 +6,9 @@ from flask import request
 from flask import redirect, url_for
 from flask import session
 
+#* import Clase Basuras
+from basuras.Basuras import Basuras
+
 
 app = Flask (__name__)
 
