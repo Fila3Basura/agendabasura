@@ -1,1 +1,71 @@
-xD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario formulario semanal</title>
+</head>
+<body>
+
+    <style>
+
+        .divFormulario{
+            padding: 100px;
+        }
+
+        form{
+            padding: 10PX;
+        }
+        form label input{
+            
+            visibility: hidden;
+        }
+
+        .divFormulario form label{
+            margin: 5px;
+           padding: 20px;
+            background-color: red;
+        }
+
+    </style>
+
+    <!--?  FORMULARIO  -->
+
+    <div class="divFormulario">
+        <h2>Lunes</h2>
+        <form action="/" method="POST" class="formulario">
+
+           <label for="lunes">
+               <input type="checkbox" name="lunes" id="lunes">
+            </label>
+            
+           <label for="martes">
+               <input type="checkbox" name="martes" id="martes">
+            </label>
+               
+           <label for="miercoles">
+               <input type="checkbox" name="miercoles" id="miercoles">
+            </label>
+
+           <label for="jueves">
+               <input type="checkbox" name="jueves" id="jueves">
+            </label>
+
+           <label for="viernes">
+               <input type="checkbox" name="viernes" id="viernes">
+            </label>
+
+           <label for="sabado">
+               <input type="checkbox" name="sabado" id="sabado">
+            </label>
+
+           <label for="domingo">
+               <input type="checkbox" name="domingo" id="domingo">
+            </label>
+
+        </form>
+    </div>
+
+
+</body>
+</html>
