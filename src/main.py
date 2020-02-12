@@ -1,3 +1,4 @@
+#* necesitamos esta libreria que nos ayudará con el if main.
 import os
 
 from flask import Flask
@@ -8,6 +9,7 @@ from flask import session
 
 #* import Clase Basuras
 from basuras.Basuras import Basuras
+from basuras.Conexion import Conexion
 
 
 app = Flask (__name__)
