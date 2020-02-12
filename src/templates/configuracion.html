@@ -1,2 +1,33 @@
 {% extends 'layout.html' %}
 
+{% block header %}
+{% endblock %}
+
+{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario formulario semanal</title>
+</head>
+<body>
+    <form action="/" method="post" class="formulario">
+    <input type="text" id="lunes" name="lunes" placeholder="Lunes">    
+    <input type="text" id="martes" name="martes" placeholder="Martes">
+    <input type="text" id="miercoles" name="miercoles" placeholder="Miercoles">
+    <input type="text" id="jueves" name="jueves" placeholder="Jueves">
+    <input type="text" id="viernes" name="viernes" placeholder="Viernes">
+    <input type="text" id="sabado" name="sabado" placeholder="Sabado">
+    <input type="text" id="domingo" name="domingo" placeholder="Domingo">
+    <input type="submit" value="Enviar" id="enviar" name="enviar">
+    <input type="submit" value="Guardar" id="guardar" name="guardar">
+
+    </form>
+</body>
+</html>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
