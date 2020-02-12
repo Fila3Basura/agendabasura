@@ -8,7 +8,7 @@ from flask import redirect, url_for
 from flask import session
 
 #* import Clase Basuras
-from basuras.Basuras import Basuras
+from basuras.Basuras import Diabasuras
 from basuras.Conexion import Conexion
 
 

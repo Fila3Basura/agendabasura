@@ -6,7 +6,7 @@ CLASE BASURAS
 import random
 import datetime
 
-class DiaBasuras():
+class Diabasuras():
 
     def __init__(self, dia, tipoBasura):
 
