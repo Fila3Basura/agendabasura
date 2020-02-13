@@ -4,67 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario formulario semanal</title>
+    <link rel="stylesheet" href="/src/static/css/style.css">
+    <link rel="stylesheet" href="/src/static/css/reset.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <script src="/src/static/js/javascript.js"></script>
+
+    
+
 </head>
 <body>
 
-    <style>
+    <div class="nav"><div class="tituloNav"><h1>AGENDA</h1></div></div>
 
-        .divFormulario{
-            padding: 100px;
-        }
-
-        form{
-            padding: 10PX;
-        }
-        form label input{
-            
-            visibility: hidden;
-        }
-
-        .divFormulario form label{
-            margin: 5px;
-           padding: 20px;
-            background-color: red;
-        }
-
-    </style>
 
     <!--?  FORMULARIO  -->
 
-    <div class="divFormulario">
+<div class="divFormulario">
+        <div class="dias">
         <h2>Lunes</h2>
+        <h2>Lunes</h2>
+        <h2>Lunes</h2>
+        <h2>Lunes</h2>
+        <h2>Lunes</h2>
+        <h2>Lunes</h2>
+        </div>
+        <div class="linea"></div>
         <form action="/" method="POST" class="formulario">
 
-           <label for="lunes">
-               <input type="checkbox" name="lunes" id="lunes">
+            <div class="chekbox">
+        <div onclick="plastico()" id="plastico" class="label">
+           <label  for="lunes">
+               <img src="/src/static/img/plastico.svg" width="50" alt="">
+               <input type="checkbox" name="lunes" >
             </label>
+        </div>
             
-           <label for="martes">
-               <input type="checkbox" name="martes" id="martes">
-            </label>
+        <div  onclick="papel()" id="papel" class="label">
+            <label for="lunes">
+                <img src="/src/static/img/papel.svg" width="50" alt="">
+                <input type="checkbox" name="lunes" >
+             </label>
+         </div>
                
-           <label for="miercoles">
-               <input type="checkbox" name="miercoles" id="miercoles">
-            </label>
+         <div onclick="cristal()" id="cristal" class="label">
+            <label for="lunes">
+                <img src="/src/static/img/cristal.svg" width="50" alt="">
+                <input type="checkbox" name="lunes" >
+             </label>
+         </div>
 
-           <label for="jueves">
-               <input type="checkbox" name="jueves" id="jueves">
-            </label>
+         <div onclick="general()"  id="general" class="label">
+            <label for="lunes">
+                <img src="/src/static/img/general.svg" width="50" alt="">
+                <input type="checkbox" name="lunes" >
+             </label>
+         </div>
 
-           <label for="viernes">
-               <input type="checkbox" name="viernes" id="viernes">
-            </label>
+         <div  onclick="organico()" id="organico" class="label">
+            <label for="lunes">
+                <img src="/src/static/img/organico.svg" width="50" alt="">
+                <input type="checkbox" name="lunes" >
+             </label>
+         </div>
 
-           <label for="sabado">
-               <input type="checkbox" name="sabado" id="sabado">
-            </label>
+         <div onclick="muebles()" id="muebles" class="label">
+            <label for="lunes">
+                <img src="/src/static/img/muebles.svg" width="50" alt="">
+                <input type="checkbox" name="lunes" >
+             </label>
+         </div>
 
-           <label for="domingo">
-               <input type="checkbox" name="domingo" id="domingo">
-            </label>
-
+           
+        </div>
         </form>
     </div>
+
+    
+
 
 
 </body>
