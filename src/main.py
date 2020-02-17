@@ -8,7 +8,7 @@ from flask import session
 
 #* import Clase Basuras
 from basuras.Basuras import Basuras
-
+# from basuras.Fechas import Fechas
 
 app = Flask (__name__)
 
@@ -19,6 +19,11 @@ def inicio():
 #ruta para abrir el archivo configuracion
 @app.route('/configuracion', methods = ['GET', 'POST'])
 def configuracion():
+    
+    if(request.method == 'POST'):
+        lunes = request.form('lunes')
+        print(lunes)
+
     return render_template('configuracion.html')
 
 if __name__ == '__main__':
