@@ -87,8 +87,32 @@ class Conexion():
         collection.delete_many({})
 
 
+    def leer_dias(self, dia):
+        db = self._conectar()
+        collection = db['diasbasura']
 
-    def modificar(self):
-        pass
+        #* lista que contendrá el resultado de la query de mongoDB
+        listaContenedor = []
+
+        buscarDocumento = collection.find({"dia": dia})
+
+        buscarDocumentoDiaSiguiente = collection.find({"dia": dia+1})
+
+        for i in list(buscarDocumento):
+            #* Se agrega a la lista, porque no funciono colocar list(buscarDocumento) directamente en el condicional.
+            listaContenedor.append(i)
+        
+        for i in list(buscarDocumentoDiaSiguiente):
+            #* Se agrega a la lista, los documentos del día siguiente al anterior
+            listaContenedor.append(i)
+                
+
+        if listaContenedor != []:
+            
+            #* Ahora esta lista tiene todos los documentos
+            print(listaContenedor)
+            
+            return listaContenedor
+
 
 
