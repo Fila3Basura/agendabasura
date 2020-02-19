@@ -8,21 +8,43 @@ from flask import redirect, url_for
 from flask import session
 
 #* import Clase Basuras
+# 
+from basuras.logica import sacarDiaSemanaNombre, sacarArraySemana
 
 app = Flask (__name__)
 
 @app.route('/', methods = ['GET', 'POST'])
+<<<<<<< HEAD
 def index():
+=======
+def inicio():
+    if(request.method == 'POST'):
+        
+        # lunes = request.form.getlist('lunes')
+        # martes = request.form.getlist('martes')
+        # miercoles = request.form.getlist('miercoles')
+        # jueves = request.form.getlist('jueves')
+        # viernes = request.form.getlist('viernes')
+        # sabado = request.form.getlist('sabado')
+        # domingo = request.form.getlist('domingo')
+        lunes = ['papel']
+        martes = ['vidrio', 'plastico']
+        miercoles = ['maceta', 'pila']
+        jueves = ['patata']
+        viernes = []
+        sabado = []
+        domingo = []
+        array = sacarArraySemana(lunes, martes, miercoles, jueves, viernes, sabado, domingo)
+
+        nombreDiaSemana = sacarDiaSemanaNombre()
+
+        return render_template('index.html', array = array, nombreDiaSemana = nombreDiaSemana)
+>>>>>>> daf24946714a38b25c50ce1cf07892bc5e3de8b7
     return render_template('index.html')
 
 #ruta para abrir el archivo configuracion
 @app.route('/configuracion', methods = ['GET', 'POST'])
 def configuracion():
-    
-    if(request.method == 'POST'):
-        lunes = request.form('lunes')
-        print(lunes)
-
     return render_template('configuracion.html')
 
 @app.route('/pruebajose', methods = ['GET', 'POST'])
