@@ -12,7 +12,7 @@ from flask import session
 app = Flask (__name__)
 
 @app.route('/', methods = ['GET', 'POST'])
-def inicio():
+def index():
     return render_template('index.html')
 
 #ruta para abrir el archivo configuracion
@@ -24,7 +24,6 @@ def configuracion():
         print(lunes)
 
     return render_template('configuracion.html')
-
 
 @app.route('/pruebajose', methods = ['GET', 'POST'])
 def pruebajose():
