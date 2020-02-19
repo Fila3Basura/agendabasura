@@ -8,16 +8,22 @@ from flask import redirect, url_for
 from flask import session
 
 #* import Clase Basuras
-from basuras.Basuras import Diabasuras
-from basuras.Conexion import Conexion
-
 
 app = Flask (__name__)
 
 @app.route('/', methods = ['GET', 'POST'])
 def inicio():
-    return 'hola'
+    return render_template('index.html')
 
+#ruta para abrir el archivo configuracion
+@app.route('/configuracion', methods = ['GET', 'POST'])
+def configuracion():
+    
+    if(request.method == 'POST'):
+        lunes = request.form('lunes')
+        print(lunes)
+
+    return render_template('configuracion.html')
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
