@@ -100,11 +100,11 @@ class Conexion():
 
         for i in list(buscarDocumento):
             #* Se agrega a la lista, porque no funciono colocar list(buscarDocumento) directamente en el condicional.
-            listaContenedor.append(i)
+            listaContenedor.append(i['basura'])
         
         for i in list(buscarDocumentoDiaSiguiente):
             #* Se agrega a la lista, los documentos del día siguiente al anterior
-            listaContenedor.append(i)
+            listaContenedor.append(i['basura'])
                 
 
         if listaContenedor != []:

@@ -12,17 +12,23 @@
 
 <div class="cajamayor">
     <h2>{{nombreDiaSemana}}</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt at, expedita repudiandae odio tempore cum?</p>
+    <p>{% for i in lectura[0]%}
+
+        {{i}}
+        {% endfor %}
+
+    </p>
 </div>
   
 <div class="cajamenor">
     <h2>{{nombrePasadoMañana}}</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt at, expedita repudiandae odio tempore cum?</p>
+    <p>{% for i in lectura[1]%}
+
+        {{i}}
+        <br>
+        {% endfor %}</p>
 </div>
 </div>
-
-{{array}}  
-
 
 {% endblock %}
 

@@ -34,18 +34,17 @@ def inicio():
         domingo = []
         array = sacarArraySemana(lunes, martes, miercoles, jueves, viernes, sabado, domingo)
 
-        nombreDiaSemana = sacarDiaSemanaNombre()
-        nombrePasadoMañana = sacarPasadoMañanaDiaSemanaNombre()
         con = Conexion()
         con.guardar(array)
-  
-        return render_template('index.html', array = array, nombreDiaSemana = nombreDiaSemana, nombrePasadoMañana = nombrePasadoMañana)
-
+        
+    nombreDiaSemana = sacarDiaSemanaNombre()
+    nombrePasadoMañana = sacarPasadoMañanaDiaSemanaNombre()
     con = Conexion()    
-    lectura = con.leer()
-    print(lectura)    
+    lectura = con.leer_dias(0) 
+
     hoy = sacarDiaSemanaOrdinal()
-    return render_template('index.html', lectura = lectura)
+
+    return render_template('index.html', nombreDiaSemana = nombreDiaSemana, nombrePasadoMañana = nombrePasadoMañana, lectura = lectura)
 
 #ruta para abrir el archivo configuracion
 @app.route('/configuracion', methods = ['GET', 'POST'])
