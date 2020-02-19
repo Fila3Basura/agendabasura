@@ -1,22 +1,47 @@
 {% extends 'layout.html' %}
 
 {% block header %}
+<div class="nav"><div class="tituloNav"><h1>AGENDA</h1></div></div>
 {% endblock %}
 
 {% block main %}
-<h2>hola</h2>
-    <form action="/" method="post" class="formulario">
-    <input type="text" id="lunes" name="lunes" placeholder="Lunes">    
-    <input type="text" id="martes" name="martes" placeholder="Martes">
-    <input type="text" id="miercoles" name="miercoles" placeholder="Miercoles">
-    <input type="text" id="jueves" name="jueves" placeholder="Jueves">
-    <input type="text" id="viernes" name="viernes" placeholder="Viernes">
-    <input type="text" id="sabado" name="sabado" placeholder="Sabado">
-    <input type="text" id="domingo" name="domingo" placeholder="Domingo">
-    <input type="submit" value="Enviar" id="enviar" name="enviar">
-    <input type="submit" value="Guardar" id="guardar" name="guardar">
 
+<div class="divFormulario">
+    
+   
+    <form action="/" method="POST" class="formulario">
+
+        {% for x in ['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'] %}
+
+        <div class="dias"><div class="h2"><h2>{{x}}</h2></div></div>
+
+        <div class="linea"></div>
+
+        <div class="chekbox">
+
+            {% for i in ['plastico','cristal','papel','general','muebles'] %}
+
+          
+        <label class="{{i}}" id="{{i}}{{x}}" onclick="{{i}}()" for="{{i}}check{{x}}">
+                <img onclick="{{i}}()" src="{{ url_for('static', filename='img/'+i+'.svg' )}}" width="50" alt="">
+                <input id="{{i}}check{{x}}" type="checkbox" name="{{x}}"  value="{{i}}">
+        </label>
+        
+        {% endfor %}
+
+
+        </div>
+
+        {% endfor %}
+    
+
+    <div class="boton"><button >Enviar</button></div>
+    
     </form>
+</div>
+
+
+
 
 {% endblock %}
 
