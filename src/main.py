@@ -1,3 +1,4 @@
+#* necesitamos esta libreria que nos ayudará con el if main.
 import os
 
 from flask import Flask
@@ -6,6 +7,7 @@ from flask import request
 from flask import redirect, url_for
 from flask import session
 
+#* import Clase Basuras
 
 app = Flask (__name__)
 
@@ -16,7 +18,19 @@ def inicio():
 #ruta para abrir el archivo configuracion
 @app.route('/configuracion', methods = ['GET', 'POST'])
 def configuracion():
+    
+    if(request.method == 'POST'):
+        lunes = request.form('lunes')
+        print(lunes)
+
     return render_template('configuracion.html')
+
+
+@app.route('/pruebajose', methods = ['GET', 'POST'])
+def pruebajose():
+    return render_template('pruebajose.html')
+
+
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
