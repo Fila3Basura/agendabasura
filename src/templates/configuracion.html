@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% block header %}
+<a href ="{{url_for('index')}}">VOLVER</a>
+
 {% endblock %}
 
 {% block main %}
@@ -15,11 +17,11 @@
     <input type="text" id="domingo" name="domingo" placeholder="Domingo">
     <input type="submit" value="Enviar" id="enviar" name="enviar">
     <input type="submit" value="Guardar" id="guardar" name="guardar">
-
     </form>
 
 {% endblock %}
 
 {% block footer %}
+
 {% endblock %}
 
