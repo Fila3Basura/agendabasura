@@ -1,16 +1,22 @@
-.caja1{
-background: #5DEAA8;
-height: 250px;
-width: 200px;
-padding: 10px;
-margin: 10px;
 
-}
-.caja2{
-background: #5DEAA8;
-height: 400px;
-width: 200px;
-padding: 10px;
-margin: 10px;
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: DodgerBlue;
+  }
+  
+.flex-container > div {
+    background-color: #f1f1f1;
+    width: 100%;
+    margin: 2em;
+  }
+
+.cajamayor{
+    flex: 50%;
 }
 
+.cajamenor{
+    flex: 10%;
+}
