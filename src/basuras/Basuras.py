@@ -3,11 +3,14 @@
 CLASE BASURAS
 """
 
-import datetime
 import random
+import datetime
 
-class Basuras():
+class Diabasuras():
 
-    def __init__(self):
+    def __init__(self, dia, tipoBasura):
 
-        self.esquema = 0
+        self.dia = dia
+        self.tipoBasura = tipoBasura
+
+    

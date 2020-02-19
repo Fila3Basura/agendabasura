@@ -1,47 +1,31 @@
 {% extends 'layout.html' %}
 
 {% block header %}
-<div class="nav"><div class="tituloNav"><h1>AGENDA</h1></div></div>
+
+<a href = "{{url_for('configuracion')}}">Configuración</a>
+
 {% endblock %}
 
 {% block main %}
-
-<div class="divFormulario">
-    
-   
-    <form action="/" method="POST" class="formulario">
-
-        {% for x in ['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'] %}
-
-        <div class="dias"><div class="h2"><h2>{{x}}</h2></div></div>
-
-        <div class="linea"></div>
-
-        <div class="chekbox">
-
-            {% for i in ['plastico','cristal','papel','general','muebles'] %}
-
-          
-        <label id="{{i}}" onclick="{{i}}()" for="{{i}}check">
-                <img onclick="{{i}}()" src="{{ url_for('static', filename='img/'+i+'.svg' )}}" width="50" alt="">
-                <input id="{{i}}check" type="checkbox" name="{{x}}"  value="{{i}}">
-        </label>
-        
-        {% endfor %}
+<div class="flex-container">
 
 
-        </div>
-
-        {% endfor %}
-    
-
-    <div class="boton"><button >Enviar</button></div>
-    
-    </form>
+<div class="cajamayor">
+    <h2>{{nombreDiaSemana}}</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt at, expedita repudiandae odio tempore cum?</p>
+</div>
+  
+<div class="cajamenor">
+    <h2>{{nombrePasadoMañana}}</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt at, expedita repudiandae odio tempore cum?</p>
+</div>
 </div>
 
+{{array}}  
+
+
 {% endblock %}
+
 
 {% block footer %}
 {% endblock %}
-
