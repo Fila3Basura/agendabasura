@@ -12,24 +12,29 @@ class Conexion():
 
         pass
 
-    def conectar(self):
-        MONGO_URL_ATLAS = "mongodb+srv://username:passwordpassword@cluster0-gc7xr.mongodb.net/test?retryWrites=true&w=majority"
+    def _conectar(self):
+        MONGO_URL_ATLAS = "mongodb+srv://username:passwordpassword@cluster0-2rsyp.mongodb.net/test?retryWrites=true&w=majority"
         client = MongoClient(MONGO_URL_ATLAS, ssl_cert_reqs=False)
         db = client['sorteo']
         return db
 
-    # def comprobar_usuario(self, dni):
-    #     db = self.conectar()
-    #     collection = db['usuarios']
-    #     comprobacion = collection.find({})
+    def leer(self, arrayObjetos):
+        db = self._conectar()
+        collection = db['diasbasura']
 
-    #     return comprobacion
+        pass
 
-    # def agregar_Datos(self, arrayObjetos):
-    #     db = self.conectar()
-    #     collection = db['usuarios']
-    #     comprobacion = collection.find({})
 
-    #     return comprobacion
+    def guardar(self, arrayObjetos):
+        pass
+
+
+
+    def borrar(self):
+
+        pass
+
+    def modificar(self):
+        pass
 
     
