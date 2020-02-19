@@ -30,52 +30,40 @@
         <form action="/" method="POST" class="formulario">
 
             <div class="chekbox">
-        <div onclick="plastico()" id="plastico" class="label">
-           <label  for="lunes">
-               <img src="/src/static/img/plastico.svg" width="50" alt="">
-               <input id="lunes" type="checkbox" name="lunes"  value="plastico">
+
+              
+            <label id="plastico" onclick="plastico()" for="plasticocheck">
+                    <img onclick="plastico()" src="/src/static/img/plastico.svg" width="50" alt="">
+                    <input id="plasticocheck" type="checkbox" name="lunes"  value="plastico">
             </label>
-        </div>
             
-        <div  onclick="papel()" id="papel" class="label">
-            <label for="lunes">
-                <img src="/src/static/img/papel.svg" width="50" alt="">
-                <input type="checkbox" name="lunes"  value="papel" >
-             </label>
-         </div>
-               
-         <div onclick="cristal()" id="cristal" class="label">
-            <label for="lunes">
-                <img src="/src/static/img/cristal.svg" width="50" alt="">
-                <input type="checkbox" name="lunes"  value="cristal" >
-             </label>
-         </div>
 
-         <div onclick="general()"  id="general" class="label">
-            <label for="lunes">
-                <img src="/src/static/img/general.svg" width="50" alt="">
-                <input type="checkbox" name="lunes"  value="general" >
-             </label>
-         </div>
+            
+            <label id="cristal" onclick="cristal()"   for="cristalcheck">
+                    <img onclick="cristal()" src="/src/static/img/cristal.svg" width="50" alt="">
+                    <input id="cristalcheck" type="checkbox" name="lunes"  value="cristal">
+            </label>
 
-         <div  onclick="organico()" id="organico" class="label">
-            <label for="lunes">
-                <img src="/src/static/img/organico.svg" width="50" alt="">
-                <input type="checkbox" name="lunes"  value="organico" >
-             </label>
-         </div>
+            <label onclick="papel()" id="papel" for="papelcheck">
+                    <img onclick="papel()" src="/src/static/img/papel.svg" width="50" alt="">
+                    <input id="papelcheck" type="checkbox" name="lunes"  value="papel">
+            </label>
 
-         <div onclick="muebles()" id="muebles" class="label">
-            <label for="lunes">
-                <img src="/src/static/img/muebles.svg" width="50" alt="">
-                <input type="checkbox" name="lunes"  value="muebles" >
-             </label>
-         </div>
+            <label onclick="general()" id="general" for="generalcheck">
+                    <img onclick="general()" src="/src/static/img/general.svg" width="50" alt="">
+                    <input id="generalcheck" type="checkbox" name="lunes"  value="general">
+            </label>
 
-           
-        </div>
+            
+            <label  onclick="muebles()" id="muebles" for="mueblescheck">
+                    <img onclick="muebles()" src="/src/static/img/muebles.svg" width="50" alt="">
+                    <input id="mueblescheck" type="checkbox" name="lunes"  value="muebles">
+            </label>
+            </div>
+        
 
-        <button >Enviar</button>
+        <div class="boton"><button >Enviar</button></div>
+        
         </form>
     </div>
 

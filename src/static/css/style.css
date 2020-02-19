@@ -4,24 +4,24 @@
     -khtml-user-select: none;
     -ms-user-select:none;}
 
-#plastico{background-color: rgba(255, 223, 45, 0.349); border: 2px solid rgb(206, 181, 37);}
+.plastico{background-color: rgba(255, 223, 45, 0.349); border: 2px solid rgb(206, 181, 37);}
 
-#cristal{background-color: rgba(30, 252, 60, 0.349);border: 2px solid}
+.cristal{background-color: rgba(30, 252, 60, 0.349);border: 2px solid}
 
-#papel{background-color: rgba(30, 208, 252, 0.349);border: 2px solid rgb(18, 110, 133)}
+.papel{background-color: rgba(30, 208, 252, 0.349);border: 2px solid rgb(18, 110, 133)}
 
-#general{background-color: rgba(189, 30, 252, 0.349);border: 2px solid rgb(100, 22, 131)}
+.general{background-color: rgba(189, 30, 252, 0.349);border: 2px solid rgb(100, 22, 131)}
 
-#organico{background-color: rgba(252, 137, 30, 0.349);border: 2px solid rgb(128, 70, 16)}
+.organico{background-color: rgba(252, 137, 30, 0.349);border: 2px solid rgb(128, 70, 16)}
 
-#muebles{background-color: rgba(252, 30, 115, 0.349);border: 2px solid rgb(168, 24, 80);}
+.muebles{background-color: rgba(252, 30, 115, 0.349);border: 2px solid rgb(168, 24, 80);}
 
 
 .nav{
     padding: 7px;
     box-sizing: border-box;
     background-color: rgb(241, 1, 101);
-    width: 100%;
+    width: 100vw;
     text-align: center;
     font-family: 'Fredoka One', cursive;
     font-size: 25px;
@@ -30,7 +30,8 @@
 .linea{
     padding: 2px;
     border-radius: 0px 5px 5px 5px;
-    background-color: rgb(241, 1, 101);}
+    background-color: rgb(241, 1, 101);
+    width: 98.9%;}
 
 body{
     display: flex;
@@ -38,12 +39,25 @@ body{
     flex-direction: column;
     background-color: white;}
 
-.dias{display: flex;}
+
+.dias h2{
+    border-radius: 3px 3px 0px 0px;
+}
+.h2{
+    
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
 
 .label{
     margin: 5px;
     padding: 15px;
     border-radius: 5px}
+
+.label img{
+    position: relative;
+    top: 10px;
+}
 
 form label input{position:absolute;}
 
@@ -59,13 +73,56 @@ form{position: relative;}
     color: white;
     padding: 5px;
     background: rgb(241, 1, 101);
-    width: 85px;
+    width: 150px;
+    text-align: center;
     font-family: 'Fredoka One', cursive;
     font-size: 30px;}
-
 
 
 .divFormulario form label{
     margin: 5px;
     padding: 5px;
     border-radius: 5px;}
+
+form{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+
+.boton button{
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    background: rgb(241, 1, 101);
+    width: 100px;
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    font-size: 20px;
+}
+
+.boton{
+    padding: 20px;
+}
+
+@media(max-width: 396px){
+    label img{
+        width: 40px;
+        
+        position: relative;
+        top: 0px;
+    }
+}
+
+.dias{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.div{
+    display: flex;
+    flex-direction: column;
+}
