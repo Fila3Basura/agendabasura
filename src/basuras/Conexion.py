@@ -18,20 +18,18 @@ class Conexion():
         db = client['agendabasura']
         return db
 
-    def leer(self, arrayObjetos):
+    def leer(self):
         db = self._conectar()
         collection = db['diasbasura']
 
         #* lista que contendrá el resultado de la query de mongoDB
         listaContenedor = []
 
-        for i in arrayObjetos:
+        buscarDocumento = collection.find({})
 
-            buscarDocumento = collection.find(i)
-
-            for i in list(buscarDocumento):
-                #* Se agrega a la lista, porque no funciono colocar list(buscarDocumento) directamente en el condicional.
-                listaContenedor.append(i)
+        for i in list(buscarDocumento):
+            #* Se agrega a la lista, porque no funciono colocar list(buscarDocumento) directamente en el condicional.
+            listaContenedor.append(i)
                 
 
         if listaContenedor != []:
