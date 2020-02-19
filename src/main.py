@@ -9,7 +9,7 @@ from flask import session
 
 # * import Clase Basuras
 
-from basuras.logica import sacarDiaSemanaNombre, sacarArraySemana, sacarPasadoMañanaDiaSemanaNombre. sacarDiaSemanaOrdinal
+from basuras.logica import sacarDiaSemanaNombre, sacarArraySemana, sacarPasadoMañanaDiaSemanaNombre, sacarDiaSemanaOrdinal
 from basuras.Conexion import Conexion
 
 app = Flask (__name__)
@@ -52,6 +52,8 @@ def configuracion():
 
 @app.route('/pruebajose', methods = ['GET', 'POST'])
 def pruebajose():
+    con = Conexion()
+    con.borrar()
     return render_template('pruebajose.html')
 
 
