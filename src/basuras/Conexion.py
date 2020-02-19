@@ -26,8 +26,9 @@ class Conexion():
 
 
     def guardar(self, arrayObjetos):
-                db = self._conectar()
+        db = self._conectar()
         collection = db['diasbasura']
+
 
         #* lista que contendrá el resultado de la query de mongoDB
         listaContenedor = []
