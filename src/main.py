@@ -1,3 +1,4 @@
+#* necesitamos esta libreria que nos ayudará con el if main.
 import os
 
 from flask import Flask
@@ -7,8 +8,6 @@ from flask import redirect, url_for
 from flask import session
 
 #* import Clase Basuras
-from basuras.Basuras import Basuras
-# from basuras.Fechas import Fechas
 
 app = Flask (__name__)
 
