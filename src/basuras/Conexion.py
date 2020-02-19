@@ -82,13 +82,11 @@ class Conexion():
 
 
 
-    def borrar(self, arrayObjetos):
+    def borrar(self):
         db = self._conectar()
         collection = db['diasbasura']
 
-        for i in arrayObjetos:
-
-            collection.detele_one(i)
+        collection.delete_many({})
 
 
 
