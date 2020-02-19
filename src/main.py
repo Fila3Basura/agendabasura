@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
+def indice():
     if(request.method == 'POST'):
 
         # lunes = request.form.getlist('lunes')
