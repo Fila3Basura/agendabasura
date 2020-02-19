@@ -22,7 +22,27 @@ class Conexion():
         db = self._conectar()
         collection = db['diasbasura']
 
-        pass
+        #* lista que contendrá el resultado de la query de mongoDB
+        listaContenedor = []
+
+        for i in arrayObjetos:
+
+            agregarDocumento = collection.find(i)
+
+            for i in list(buscarDocumento):
+                #* Se agrega a la lista, porque no funciono colocar list(buscarDocumento) directamente en el condicional.
+                listaContenedor.append(i)
+                
+
+        if listaContenedor != []:
+            
+            #* Ahora esta lista tiene todos los documentos
+            print(listaContenedor)
+            
+            return listaContenedor
+
+
+
 
 
     def guardar(self, arrayObjetos):
@@ -64,9 +84,15 @@ class Conexion():
 
 
 
-    def borrar(self):
+    def borrar(self, arrayObjetos):
+        db = self._conectar()
+        collection = db['diasbasura']
 
-        pass
+        for i in arrayObjetos:
+
+            agregarDocumento = collection.detele_one(i)
+
+
 
     def modificar(self):
         pass
