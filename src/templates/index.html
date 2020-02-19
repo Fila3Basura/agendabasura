@@ -2,27 +2,27 @@
 
 {% block header %}
 <a href ="{{url_for('configuracion')}}">CONFIGURACIÓN</a>
-
 {% endblock %}
 
 {% block main %}
 <div class="flex-container">
 
 <div class="cajamayor">
-    <h2>LUNES</h2>
+    <h2>{{nombreDiaSemana}}</h2>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt at, expedita repudiandae odio tempore cum?</p>
 </div>
   
 <div class="cajamenor">
-    <h2>MARTES</h2>
+    <h2>{{nombrePasadoMañana}}</h2>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt at, expedita repudiandae odio tempore cum?</p>
 </div>
 
 </div>
 
-{{array}} {{nombreDiaSemana}}
+{{array}}  
 
 {% endblock %}
+
 
 {% block footer %}
 {% endblock %}

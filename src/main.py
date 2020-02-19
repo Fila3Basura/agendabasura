@@ -1,4 +1,4 @@
-#* necesitamos esta libreria que nos ayudará con el if main.
+# * necesitamos esta libreria que nos ayudará con el if main.
 import os
 
 from flask import Flask
@@ -7,19 +7,18 @@ from flask import request
 from flask import redirect, url_for
 from flask import session
 
-#* import Clase Basuras
-# 
-from basuras.logica import sacarDiaSemanaNombre, sacarArraySemana
+# * import Clase Basuras
 
-app = Flask (__name__)
+from basuras.logica import sacarDiaSemanaNombre, sacarArraySemana, sacarPasadoMañanaDiaSemanaNombre. sacarDiaSemanaOrdinal
+from basuras.Conexion import Conexion
 
-@app.route('/', methods = ['GET', 'POST'])
-<<<<<<< HEAD
+app = Flask(__name__)
+
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
-=======
-def inicio():
     if(request.method == 'POST'):
-        
+
         # lunes = request.form.getlist('lunes')
         # martes = request.form.getlist('martes')
         # miercoles = request.form.getlist('miercoles')
@@ -34,23 +33,28 @@ def inicio():
         viernes = []
         sabado = []
         domingo = []
-        array = sacarArraySemana(lunes, martes, miercoles, jueves, viernes, sabado, domingo)
+        array = sacarArraySemana(
+            lunes, martes, miercoles, jueves, viernes, sabado, domingo)
 
         nombreDiaSemana = sacarDiaSemanaNombre()
+        nombrePasadoMañana = sacarPasadoMañanaDiaSemanaNombre()
+        con = Conexion()
+        con.guardar(array)
 
-        return render_template('index.html', array = array, nombreDiaSemana = nombreDiaSemana)
->>>>>>> daf24946714a38b25c50ce1cf07892bc5e3de8b7
+        return render_template('index.html', array=array, nombreDiaSemana=nombreDiaSemana, nombrePasadoMañana=nombrePasadoMañana)
+
+    hoy = sacarDiaSemanaOrdinal()
     return render_template('index.html')
 
-#ruta para abrir el archivo configuracion
-@app.route('/configuracion', methods = ['GET', 'POST'])
+# ruta para abrir el archivo configuracion
+@app.route('/configuracion', methods=['GET', 'POST'])
 def configuracion():
     return render_template('configuracion.html')
 
-@app.route('/pruebajose', methods = ['GET', 'POST'])
+
+@app.route('/pruebajose', methods=['GET', 'POST'])
 def pruebajose():
     return render_template('pruebajose.html')
-
 
 
 if __name__ == '__main__':
