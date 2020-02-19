@@ -88,7 +88,7 @@ class Conexion():
 
         for i in arrayObjetos:
 
-            agregarDocumento = collection.detele_one(i)
+            collection.detele_one(i)
 
 
 
