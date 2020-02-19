@@ -9,7 +9,7 @@ from flask import session
 
 #* import Clase Basuras
 # 
-from basuras.logica import sacarDiaSemanaNombre, sacarArraySemana
+from basuras.logica import sacarDiaSemanaNombre, sacarArraySemana, sacarPasadoMañanaDiaSemanaNombre
 
 app = Flask (__name__)
 
@@ -34,8 +34,10 @@ def inicio():
         array = sacarArraySemana(lunes, martes, miercoles, jueves, viernes, sabado, domingo)
 
         nombreDiaSemana = sacarDiaSemanaNombre()
+        nombrePasadoMañana = sacarPasadoMañanaDiaSemanaNombre()
 
-        return render_template('index.html', array = array, nombreDiaSemana = nombreDiaSemana)
+        return render_template('index.html', array = array, nombreDiaSemana = nombreDiaSemana, nombrePasadoMañana = nombrePasadoMañana)
+        
     return render_template('index.html')
 
 #ruta para abrir el archivo configuracion

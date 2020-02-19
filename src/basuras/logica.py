@@ -17,7 +17,13 @@ def sacarDiaSemanaOrdinal():
     return datetime.datetime.today().weekday()
 
 def sacarDiaSemanaNombre():
-    arrayDiasSemana = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo']
+    arrayDiasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
     diaOrdinal = sacarDiaSemanaOrdinal()
  
     return arrayDiasSemana[diaOrdinal]
+
+def sacarPasadoMañanaDiaSemanaNombre():
+    arrayDiasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
+    diaOrdinal = sacarDiaSemanaOrdinal() +1
+ 
+    return arrayDiasSemana[diaOrdinal] 
