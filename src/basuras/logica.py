@@ -1,13 +1,13 @@
 import datetime
 
 def sacarArraySemana(lunes, martes, miercoles, jueves, viernes, sabado, domingo):
-    lunesObjeto= {"dia": "lunes", "basura": lunes}
-    martesObjeto= {"dia": "martes", "basura": martes}
-    miercolesObjeto= {"dia": "miercoles", "basura": miercoles}
-    juevesObjeto= {"dia": "jueves", "basura": jueves}
-    viernesObjeto= {"dia": "viernes", "basura": viernes}
-    sabadoObjeto= {"dia": "sabado", "basura": sabado}
-    domingoObjeto= {"dia": "domingo", "basura": domingo}
+    lunesObjeto= {"dia": 0, "basura": lunes}
+    martesObjeto= {"dia": 1, "basura": martes}
+    miercolesObjeto= {"dia": 2, "basura": miercoles}
+    juevesObjeto= {"dia": 3, "basura": jueves}
+    viernesObjeto= {"dia": 4, "basura": viernes}
+    sabadoObjeto= {"dia": 5, "basura": sabado}
+    domingoObjeto= {"dia": 6, "basura": domingo}
 
     array = [lunesObjeto, martesObjeto, miercolesObjeto, juevesObjeto, viernesObjeto, sabadoObjeto, domingoObjeto]
     return array
