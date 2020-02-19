@@ -38,11 +38,14 @@ def inicio():
         nombrePasadoMañana = sacarPasadoMañanaDiaSemanaNombre()
         con = Conexion()
         con.guardar(array)
-
+  
         return render_template('index.html', array = array, nombreDiaSemana = nombreDiaSemana, nombrePasadoMañana = nombrePasadoMañana)
-        
+
+    con = Conexion()    
+    lectura = con.leer()
+    print(lectura)    
     hoy = sacarDiaSemanaOrdinal()
-    return render_template('index.html')
+    return render_template('index.html', lectura = lectura)
 
 #ruta para abrir el archivo configuracion
 @app.route('/configuracion', methods = ['GET', 'POST'])
