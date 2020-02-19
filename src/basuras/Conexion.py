@@ -27,7 +27,7 @@ class Conexion():
 
         for i in arrayObjetos:
 
-            agregarDocumento = collection.find(i)
+            buscarDocumento = collection.find(i)
 
             for i in list(buscarDocumento):
                 #* Se agrega a la lista, porque no funciono colocar list(buscarDocumento) directamente en el condicional.
@@ -95,4 +95,4 @@ class Conexion():
     def modificar(self):
         pass
 
-    
+
