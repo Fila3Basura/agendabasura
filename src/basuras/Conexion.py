@@ -15,7 +15,7 @@ class Conexion():
     def _conectar(self):
         MONGO_URL_ATLAS = "mongodb+srv://username:passwordpassword@cluster0-2rsyp.mongodb.net/test?retryWrites=true&w=majority"
         client = MongoClient(MONGO_URL_ATLAS, ssl_cert_reqs=False)
-        db = client['sorteo']
+        db = client['agendabasura']
         return db
 
     def leer(self, arrayObjetos):
@@ -28,39 +28,37 @@ class Conexion():
     def guardar(self, arrayObjetos):
         db = self._conectar()
         collection = db['diasbasura']
-
-
         #* lista que contendrá el resultado de la query de mongoDB
         listaContenedor = []
 
         for i in arrayObjetos:
 
             #* Query de mongoDB para buscar si el documento existe para despues comprobarlo mediante el condicional.
-            buscarDocumento = collection.find(i)
+            # buscarDocumento = collection.find(i)
             #* Si no funciona el anterior query, probar con este.
             # buscarDocumento = collection.find({'dia': i['dia'], 'basura': i['basura']})
 
-            for i in list(buscarDocumento):
+            # for i in list(buscarDocumento):
                 #* Se agrega a la lista, porque no funciono colocar list(buscarDocumento) directamente en el condicional.
-                listaContenedor.append(i)
+                # listaContenedor.append(i)
                 
 
-            if listaContenedor != []:
+            # if listaContenedor != []:
 
                 #* mensaje de que ya existen documentos de algún día
-                mensaje = f'Ya existen el documento del día: {i['dia']}'
+                # mensaje = f'Ya existen el documento del día: {i['dia']}'
 
-                return mensaje
+                # return mensaje
 
-            else:
+            # else:
 
                 #* Método que nos agrega el documento del día a la BD de mongoDB
-                agregarDocumento = collection.insert_one(i)
+            collection.insert_one(i)
 
                 #* Mensaje de que aún no exsite un documento de ese día, pero ya se acaba de agregar
-                mensaje = f'No existe el documento del día: {i['dia']}, pero ya se acaba de agregar'
+                # mensaje = f'No existe el documento del día: {i['dia']}, pero ya se acaba de agregar'
 
-                return mensaje
+                # return mensaje
 
 
 

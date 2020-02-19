@@ -7,9 +7,10 @@ from flask import request
 from flask import redirect, url_for
 from flask import session
 
-#* import Clase Basuras
-# 
+# * import Clase Basuras
+
 from basuras.logica import sacarDiaSemanaNombre, sacarArraySemana, sacarPasadoMañanaDiaSemanaNombre
+from basuras.Conexion import Conexion
 
 app = Flask (__name__)
 
@@ -35,6 +36,8 @@ def inicio():
 
         nombreDiaSemana = sacarDiaSemanaNombre()
         nombrePasadoMañana = sacarPasadoMañanaDiaSemanaNombre()
+        con = Conexion()
+        con.guardar(array)
 
         return render_template('index.html', array = array, nombreDiaSemana = nombreDiaSemana, nombrePasadoMañana = nombrePasadoMañana)
         
